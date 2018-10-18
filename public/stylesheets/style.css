@@ -1,0 +1,21 @@
+form label{
+	display: inline-block;
+	width: 180px;
+}
+
+.right{
+	float: right;
+}
+
+/*
+table{
+	cellspacing: 0px;
+	cellpadding: 0px;
+}
+
+
+.menu{
+	position: fixed;
+	width: 100%;
+}
+*/

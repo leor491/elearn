@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>eLearn</title>
+	<link rel="stylesheet" type="text/css" href="/ks/css/kickstart.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="/ks/style.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" media="all" />
+	<script
+	src="https://code.jquery.com/jquery-1.12.4.min.js"
+	integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+	crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/ks/js/kickstart.js"></script>
+</head>
+<body>
+	<ul class="menu">
+		<li class="current"><a href="/">Home</a></li>
+		<li><a href="/classes">Classes</a></li>
+		{{#if user}}
+			<li class="right"><a href="/users/logout">Logout</a></li>
+		{{else}}
+			<li class="right"><a href="/users/register">Register</a></li>
+		{{/if}}
+	</ul>
+
+	<div class="grid">
+		<div class="col_12">
+			<div class="col_9">
+				{{>messages}}
+				{{{body}}}
+			</div>
+
+			<div class="col_3">
+				{{#if user}}
+					{{>welcome}}
+				{{else}}
+					{{>login}}
+				{{/if}}
+			</div>
+
+			{{#unless details}}
+				<hr/>
+				{{>classes}}
+			{{/unless}}
+		</div>
+	</div>
+
+	<div class="clear"></div>
+	
+	<div id="footer">
+		&copy; Copyright 2018 All Rights Reserved. eLearn
+	</div>
+</body>
+</html>

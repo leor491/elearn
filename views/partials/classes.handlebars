@@ -1,0 +1,12 @@
+<h4>Latest Classes</h4>
+{{#if latest_classes}}
+{{#each latest_classes}}
+	<div class="col_4">
+		<h4>{{title}}</h4>
+		<p>{{description}}</p>
+		<a class="button" href="/classes/details/{{_id}}">View Class</a>
+	</div>
+{{/each}}
+{{else}}
+	<p>No classes at this time!</p>
+{{/if}}

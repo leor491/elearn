@@ -1,0 +1,30 @@
+{{#if class}}
+	<h2>{{class.title}}</h2>
+	<p><{{class.instructor}}</p>
+	<p>{{class.description}}</p>
+	<table>
+		<thead>
+			<th>Lesson Number</th>
+			<th>Lesson Title</th>
+			<th></th>
+		</thead>
+		<tbody>
+			{{#if class.lessons}}
+				{{#each class.lessons}}
+					<tr>
+						<td>{{lesson_number}}</td>
+						<td>{{lesson_title}}</td>
+						<td><a href="/classes/{{../class._id}}/lessons/{{_id}}">View Lesson</a></td>
+					</tr>
+				{{/each}}
+			{{else}}
+				<p>No lessons available at this time.</p>
+			{{/if}}
+		</tbody>
+	</table>
+{{else}}
+	<p>No class info at this time!</p>
+{{/if}}
+
+
+

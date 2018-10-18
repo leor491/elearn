@@ -1,0 +1,12 @@
+{{#if classes}}
+{{#each classes}}
+	<div class="block">
+		<h3>{{title}}</h3>
+		<em>by {{instructor}}</em>
+		<p>{{description}}</p>
+		<a class="button" href="/classes/details/{{_id}}">View Class</a>
+	</div>
+{{/each}}
+{{else}}
+	<p>No classes at this time!</p>
+{{/if}}

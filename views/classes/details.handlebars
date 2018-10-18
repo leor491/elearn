@@ -1,0 +1,31 @@
+{{#if class}}
+	<h2>{{class.title}}</h2>
+	<p><strong>Instructor:</strong> {{class.instructor}}</p>
+	<p>{{class.description}}</p>
+	{{#if class.lessons}}
+		<h5>Lessons</h5>
+		<ul class="alt">
+			{{#each class.lessons}}
+				<li>{{lesson_number}}: {{lesson_title}}</li>
+			{{/each}}
+		</ul>
+	{{else}}
+		<p>No lessons available at this time.</p>
+	{{/if}}
+
+	{{#if user}}
+		<form id="classRegForm" method="post" action="/{{user.type}}s/register">
+			<!-- <input type="hidden" name="user_id" value="{{user._id}}"> -->
+			<input type="hidden" name="class_id" value="{{class._id}}">
+			<input type="hidden" name="class_title" value="{{class.title}}">
+			<input type="submit" class="button" value="Register for this class!">
+		</form>
+	{{else}}
+		<p>You must be logged in to register for this class.</p>
+	{{/if}}
+{{else}}
+	<p>No class info at this time!</p>
+{{/if}}
+
+
+
