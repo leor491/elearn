@@ -2,7 +2,6 @@
   "name": "elearn",
   "version": "1.0.0",
   "description": "An online e-learning app.",
-  "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
